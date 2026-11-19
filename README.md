@@ -4,6 +4,10 @@
 
 This project analyzes daily pharmaceutical sales data to understand sales patterns across different drug categories. The analysis uses Python, Pandas, and Matplotlib to answer business questions and present the findings through visualizations.
 
+## Project Reference
+
+This project is based on the [Pharmaceutical Sales Data project](https://roadmap.sh/projects/pharmaceutical-sales-data) from roadmap.sh.
+
 ## How to Run
 
 ### 1. Clone the repository
