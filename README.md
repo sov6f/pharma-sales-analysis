@@ -1,14 +1,10 @@
 # Pharmaceutical Sales Analysis
 
-## About the Project
+## About
 
-This project focuses on analyzing daily pharmaceutical sales data to understand sales patterns across different drug categories (ATC codes).
+This project analyzes daily pharmaceutical sales data to understand sales patterns across different drug categories. The analysis uses Python, Pandas, and Matplotlib to answer business questions and present the findings through visualizations.
 
-The main goal is to identify top-selling drug categories, compare sales across selected months, understand yearly sales performance, and explore seasonal trends in respiratory drug sales.
-
-The analysis was performed using Python, Pandas, and Matplotlib.
-
-## How to Run the Project
+## How to Run
 
 ### 1. Clone the repository
 
@@ -17,101 +13,100 @@ git clone <repository-url>
 cd pharma-sales-analysis
 ```
 
-### 2. Install uv
+### 2. Set up the environment
 
-If uv is not already installed:
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### 3. Create a virtual environment
+This project uses `uv` for Python environment and dependency management.
 
 ```bash
 uv venv
-```
-
-### 4. Lock and install dependencies
-
-```bash
 uv lock
 uv sync
 ```
 
-- `uv lock` generates or updates the dependency lock file.
-- `uv sync` installs the project dependencies into the virtual environment.
-
-### 5. Run the notebook
+### 3. Run the notebook
 
 Open `pharma_sales_analysis.ipynb` in VS Code or Jupyter Notebook.
 
-Select the Python interpreter from the project's `.venv` environment and run the notebook cells.
+Select the project's `.venv` Python interpreter and run the notebook cells.
 
-## Visualizations
+---
 
-### 1. Total Sales by Drug Category
+## Analysis and Findings
+
+### 1. Which drug category has the highest total sales?
+
+**Findings:**
+
+N02BE recorded the highest total sales, with approximately **63,005.40**, making it the leading category in the dataset.
+
+**Visualization:**
 
 ![Total Sales by Drug Category](visualizations/total_sales_by_category.png)
 
-N02BE recorded the highest total sales, followed by N05B and R03. N05C had the lowest total sales.
+### 2. Which individual drug brands have the highest sales?
 
-### 2. Top Three Drug Categories in Selected Months
+**Findings:**
 
-**January 2015**
+The dataset contains sales information for ATC drug categories rather than individual brand names. Therefore, individual drug brands cannot be identified from the available data.
 
-![January 2015](visualizations/top_3_categories_2015_1.png)
+**Visualization:**
 
-**July 2016**
+Not available because the dataset does not contain individual brand-level sales information.
 
-![July 2016](visualizations/top_3_categories_2016_7.png)
+### 3. Which drug categories had the highest sales in January 2015, July 2016, and September 2017?
 
-**September 2017**
+**Findings:**
 
-![September 2017](visualizations/top_3_categories_2017_9.png)
+- **January 2015:** N02BE, N05B, and R03 were the top three categories.
+- **July 2016:** N02BE, N05B, and M01AB were the top three categories.
+- **September 2017:** N02BE, N05B, and R03 were the top three categories.
 
-N02BE ranked first in all three selected months, while N05B ranked second. The third position changed depending on the month.
+N02BE ranked first in all three selected months.
 
-### 3. Drug Category Sales in 2017
+**Visualization:**
 
-![Drug Sales in 2017](visualizations/drug_sales_2017.png)
+![Top 3 Categories - January 2015](visualizations/top_3_categories_2015_1.png)
 
-N02BE was the highest-selling drug category in 2017, with total sales of approximately 9,258.80.
+![Top 3 Categories - July 2016](visualizations/top_3_categories_2016_7.png)
 
-### 4. Average Daily Sales by Drug Category
+![Top 3 Categories - September 2017](visualizations/top_3_categories_2017_9.png)
 
-![Average Daily Sales](visualizations/average_daily_sales.png)
+### 4. Which drug category had the highest sales in 2017?
 
-N02BE had the highest average daily sales at approximately 29.92, making it the leading category in average daily sales as well.
+**Findings:**
 
-### 5. Monthly Sales of Respiratory Drugs (R03)
+N02BE had the highest sales in 2017, with approximately **9,258.80**. N05B ranked second, followed by R03.
 
-![Monthly R03 Sales](visualizations/monthly_r03_sales.png)
+**Visualization:**
 
-R03 sales showed noticeable monthly variation.
+![Drug Category Sales in 2017](visualizations/drug_sales_2017.png)
 
-- December recorded the highest average daily sales at approximately 7.92.
-- October followed with approximately 7.21.
-- July recorded the lowest average daily sales at approximately 2.96.
+### 5. Which drug category has the highest average daily sales?
 
-This suggests a seasonal pattern, with higher respiratory drug sales towards the colder months.
+**Findings:**
 
-## Business Questions & Findings
+N02BE had the highest average daily sales at approximately **29.92**, considerably higher than the other categories.
 
-| Business Question | Finding |
-|---|---|
-| What are the total sales quantities for each drug category? | N02BE had the highest total sales (63,005.40), while N05C had the lowest (1,249.96). |
-| Which individual drug brands have the highest total sales? | Individual brand information is not available in the dataset. |
-| Which three drugs have the highest sales in January 2015? | N02BE (1,044.24), N05B (463.00), R03 (177.25). |
-| Which three drugs have the highest sales in July 2016? | N02BE (652.36), N05B (240.00), M01AB (194.53). |
-| Which three drugs have the highest sales in September 2017? | N02BE (863.75), N05B (223.00), R03 (139.00). |
-| Which drug has sold the most often in 2017? | N02BE, with approximately 9,258.80 in total sales. |
-| Which drug category has the highest average daily sales? | N02BE, with approximately 29.92 average daily sales. |
-| Are respiratory drugs (R03) sold more during specific months? | Yes. December and October recorded the highest average daily sales. |
+**Visualization:**
+
+![Average Daily Sales by Drug Category](visualizations/average_daily_sales.png)
+
+### 6. During which months are R03 sales highest?
+
+**Findings:**
+
+December had the highest average daily R03 sales at approximately **7.92**, followed by October at **7.21**. July recorded the lowest average at approximately **2.96**.
+
+This indicates variation in R03 sales across the months.
+
+**Visualization:**
+
+![Monthly Average R03 Sales](visualizations/monthly_r03_sales.png)
+
+---
 
 ## Conclusion
 
-The analysis shows that N02BE consistently performed better than the other drug categories in terms of total sales, selected monthly sales, and average daily sales.
+The analysis shows that N02BE consistently leads sales across the dataset, including in total sales, average daily sales, and the selected monthly comparisons. R03 sales also vary across the year, with the highest average daily sales recorded in December.
 
-Respiratory drug sales (R03) also showed monthly variations, with higher average sales in October and December and lower sales during July and August.
-
-Overall, this project helped identify important sales patterns and trends in pharmaceutical data using Python.
+The dataset supports category-level analysis, but does not provide individual drug brand information.
